@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task Manager</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="scripts/task-manager.js"></script>
+	<script src="scripts/script.js"></script>
+	<script type="text/javascript">
+		var taskManager = new TaskManager();
+	</script>
+</head>
+<body>
+
+<section id="page">
+	<header>
+		<h1 id="pagetitle">Task Manager</h1>
+		<nav>
+			<form>
+				<select class="searchbox" id="search" onchange="filterTasks()">
+					<option selected="selected" value="all">All</option>
+				  	<option value="false">In Progress</option>
+				  	<option value="true">Completed</option>
+				</select>
+			</form>
+		</nav>
+	</header>
+
+	<section>
+		Title: <input type="text" id="title"><br>
+	  	Date: <input type="date" id="date" ><br>
+	  	<button onclick = "addFormDataToList()">ADD</button>		
+	</section>
+
+	<section>
+		<table id="taskView"></table>
+        <button onclick = "deleteSelectedTasks()">DELETE</button>
+        <button onclick = "changeStatusSelectedTasks()">CHANGE STATUS</button>
+	</section>
+
+	<footer>
+		<p>&copy;Masoom Badkur</p>
+	</footer>
+</section>
+	
+</body>
+</html>
